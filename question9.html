@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function compoundInterest()
+        {
+
+        p=parseInt(document.getElementById("princpl").value);
+        alert(p);
+        r=parseInt(document.getElementById("no").value);
+        alert(r);
+        n=parseInt(document.getElementById("per").value);
+        alert(n);
+
+        var comp;
+        comp=(p*Math.pow((1+(r/100)),n))-p
+        alert(comp)
+
+        document.getElementById("com").innerHTML=comp+"rs";
+    
+        }
+      
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <form>
+            <table border="3px">
+                <tr>
+                   <th colspan="2">******Calculate Compound Interest*****</th> 
+                </tr>
+                <tr>
+                    <td>Principal</td>
+                    <td><input type="Number" name="princpl" id="princpl" value="Rs "></td>
+                </tr>
+
+                <tr>
+                    <td>Rate of Interest</td>
+                    <td><input type="number" name="no" id="no"></td>
+                </tr>
+
+                <tr>
+                    <td>Period</td>
+                    <td><input type="number" name="per" id="per">yr</td>
+                </tr>
+
+                <tr>
+                    <td>Compound Interest</td>
+                    <td name="com" id="com">__</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+     <button type="button" name="btn" id="btn" onclick="compoundInterest()">Compound Interest</button>
+    </div>
+
+    <inpt></inpt>
+
+</body>
+</html>

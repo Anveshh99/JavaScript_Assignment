@@ -1,0 +1,66 @@
+
+<!-- // accept and store name of 6 employees into array
+// and display in sorted order of names. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .myclass{
+            display: none;
+        }
+
+        .myc{
+            display: block;
+        }
+    </style>
+
+    <script>
+           
+        var namearr;
+
+        function addName()
+        {
+            var nm=document.getElementById("nm").value;
+            alert(nm);
+            var namearr=[];
+
+            for(var i=0; i<nm; i++)
+            {
+                namearr[i]=prompt("Enter Name");
+            }
+
+            namearr.sort;
+            
+            for(var i=0; i<nm; i++ )
+            {
+                document.getElementById("myform").innerHTML +=namearr[i]+"<br>";
+            }
+
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="myform">
+        <form>
+            Enter the Strength of an employees:  <input type="number" name="nm" id="nm"><br>
+            <button type="button" name="btn" id="btn" onclick="addName()">Add Name</button>
+         
+        </form>
+    </div>
+
+    <div>
+
+    </div>
+</body>
+</html>

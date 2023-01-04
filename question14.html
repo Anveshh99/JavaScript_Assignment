@@ -1,0 +1,120 @@
+<!-- 14.	Create a custom object for rectangle and circle. Individual Rectangle objects should be able to store dimension,
+and have methods to print area and perimeter. Individual Circle objects should be able to store radius, and have methods
+to print area and circumference. Display dimensions, area and perimeter of rectangle and circle objects. 
+Make use of pre-defined objects -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            display: none;
+        }
+        .mclass{
+            display: block;
+        }
+        .myclass1{
+            display: none;
+        }
+
+    </style>
+    <script>
+        function comp()
+        {
+            
+            
+            var arr=document.getElementsByName("select");
+            
+            for(i=0;i<arr.length;i++)
+            {
+                if(arr[i].checked)
+                {
+                    var op=arr[i].value;
+                }
+            }
+
+            function display()
+            {
+                document.getElementById("div1").classList.add("myclass");
+                document.getElementById("div1").classList.remove("mclass");
+                document.getElementById("div2").classList.add("myclass1");
+                document.getElementById("div2").classList.remove("mclass");
+            }
+
+           
+            
+            switch(op)
+            {
+                case 'rectangle':
+                    
+                    arearec();
+                    
+                    break;
+                case 'circle':
+                    circle();
+                    break;
+            }
+            function arearec(){
+                         
+                        
+                        var len=document.getElementById("l").value;
+                        var bth=document.getElementById("b").value;
+                        
+                        var area1=len*bth;
+                        
+                        document.getElementById("mydiv").innerHTML=" "+area1;
+                        document.getElementById("div1").classList.remove("myclass");
+                        document.getElementById("div1").classList.add("mclass");
+                   }
+
+                   function circle()
+                   {
+                    var r=document.getElementById("rad").value;
+
+                    var area2=(Math.PI)*r*r;
+                    document.getElementById("mydiv").innerHTML=" "+area2;
+                    document.getElementById("div2").classList.remove("myclass1");
+                    document.getElementById("div2").classList.add("mclass");
+                   }
+        }
+
+
+     
+
+            
+    </script>
+</head>
+<body onload="display()">
+    <label>Select Area</label>
+    <input type="radio" name="select" id="a1" value="rectangle">
+    <label for="a1">Rectangle</label>
+    <input type="radio" name="select" id="a2" value="circle">
+    <label for="a2">Circle</label><br>
+    <button type="button" name="btn" id="btn" onclick="comp()">Submit</button>
+    <div id="div1" class="myclass">
+        <form id="frm">
+    
+            <label for="l">Enter Length:- </label>
+            <input type="number" name="length" id="l" required><br>
+            <label for="b">Enter Breadth:- </label>
+            <input type="number" name="breadth" id="b" required><br>
+            <button type="button" name="btn1" id="btn1" onclick="comp()">Continue</button>
+        </form>
+    </div>
+    <div id="div2" class="myclass1">
+        <form id="frm1">
+            <label for="rad">Enter Radius:-</label>
+            <input type="number" name="radius" id="rad" required><br>
+            <button type="button" name="btn2" id="btn2" onclick="comp()">Continue</button>
+        </form>
+
+    </div>
+    
+    <div id="mydiv"></div>
+</body>
+</html>

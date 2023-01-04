@@ -1,0 +1,85 @@
+<!-- //minimum of set of arguments. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table>
+        <!-- <form> -->
+            <tr>
+                <td><label for="idno">Order ID</label></td>
+                <td><input type="number" name="idno" id="idno" required></br></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td> <label for="custName">Customer name</label></td>
+                <td><input type="text" name="custName" id="custName" required minlength="6"></td>
+                <td id="errName"></td>
+            </tr>
+            <tr>
+                <label for="billDate">Billing date</label>
+                <input type="date" name="billDate" id="billDate" required></br>
+                <td id="errBill"></td>
+            </tr>
+            <tr>
+                <label for="shipDate">Shipping date</label>
+                <input type="date" name="shipDate" id="shipDate" required></br>
+            </tr>
+            <tr>
+                <label for="price">Order total</label>
+                <input type="number" name="price" id="price" required></br>
+            </tr>
+
+            <tr>
+                <td>
+                    <button type="button" id="btn" onclick="validate()">Display</button>
+                </td>
+            </tr>
+        <!-- </form> -->
+    </table>
+</body>
+
+<script>
+
+    function validate() {
+
+       // alert(billdate);
+        var billdate=document.getElementById("billDate").value;
+        var shipdate=document.getElementById("shipDate").value;
+
+       
+        if(billdate>shipdate){
+            document.getElementById("errBill").innerHTML="<br>Bill date should be lesser than shipping date";
+            return false;
+        }
+
+        return true;
+    }
+
+    if(validate){
+
+        var order={};
+
+        order.idno=""+document.getElementById("idno");
+        order.custName=""+document.getElementById("custName");
+        order.billDate=""+document.getElementById("billDate");
+        order.shipDate=""+document.getElementById("shipDate");
+        order.price=""+document.getElementById("price");
+
+        var newWin=window.open();
+        newWin.document.write(order.billDate);
+
+        newWin.document.open.document.getElementById("mydiv");
+    }
+
+</script>
+
+</html>
+

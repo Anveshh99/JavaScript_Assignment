@@ -1,0 +1,134 @@
+<!-- 14.	Create a custom object for rectangle and circle. Individual Rectangle objects should be able to store dimension,
+and have methods to print area and perimeter. Individual Circle objects should be able to store radius, and have methods
+to print area and circumference. Display dimensions, area and perimeter of rectangle and circle objects. 
+Make use of pre-defined objects -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .myc{
+             display: block;
+        }
+
+        .myclass1{
+            display: none;
+        }
+
+        .myclass2{
+            display: none;
+        }
+    </style>
+
+    <script>
+
+        function calculate()
+        {
+
+           // alert("hi");
+            var arr=document.getElementsByName("obj");
+            
+            for(var i=0; i<arr.length; i++)
+            {
+                if(arr[i].checked)
+               {
+                 var choice=i;
+               }
+            }
+
+
+
+            // alert(choice);
+
+            switch(choice)
+            {
+                case 0:    
+                //alert("hi...");
+                document.getElementById("myc2").classList.add("myc");
+                document.getElementById("myc2").classList.remove("myclass1");
+                var l= document.getElementById("length").value;
+                var b= document.getElementById("breath").value;
+                var area=l*b;
+                var peri=2*(l+b);
+                document.getElementById("mydiv").innerHTML="Area :"+area+"<br>"+"Perimeter"+peri+"<br>";
+                break;
+
+
+                case 1:
+                document.getElementById("myc3").classList.add("myc");
+                document.getElementById("myc3").classList.remove("myclass2");
+                var r= document.getElementById("radius").value;
+                //alert(r);
+                var area=3.14*r*r;
+                var cir=2*3.14*r;
+                document.getElementById("mydiv").innerHTML="Area :"+area+"<br>"+"Circumference"+cir+"<br>";
+                break;               
+
+            }
+
+        }
+
+        function display()
+        {
+            document.getElementById("mydiv1").classList.add("myclass1");
+            document.getElementById("mydiv1").classList.remove("myc");
+            document.getElementById("mydiv2").classList.add("myclass1");
+            document.getElementById("mydiv2").classList.remove("myc");
+        }
+
+    </script>
+    
+</head>
+<body onload="display()">
+
+    <h3><p>Select Object</p></h3><br>
+    <input type="radio" name="obj" id="rectangle">
+    <label for="rectangle">Rectangle</label><br>
+    <input type="radio" name="obj" id="circle">
+    <label for="circle">Circle</label><br>
+    <button type="button" name="btn" id="btn" onclick="calculate()">Continue</button><br>
+
+
+<div class="myc" id="myc1">
+    <div class="myclass1" id="myc2">
+    <form>
+        <p>-------------------------------------------------------</p>
+        Length: <input type="number" name="length" id="length"><br>
+        Breath: <input type="number" name="Breath" id="breath"><br>
+        <p>-------------------------------------------------------</p>
+        <br>
+        Calculate:
+        <button type="button" name="btn1" id="btn1" onclick="calculate()">calculate</button><br>
+    </form>
+    </div>
+
+    
+    <div class="myclass2" id="myc3">
+    <form>
+        <p>-------------------------------------------------------</p>
+        Radius: <input type="number" name="radius" id="radius"><br>
+        <p>-------------------------------------------------------</p>
+        <br>
+        Calculate:
+        <button type="button" name="btn1" id="btn1" onclick="calculate()">calculate</button><br>
+    </form>    
+    </div>
+</div>
+
+
+    <div id="mydiv">
+
+    </div>
+
+
+
+  
+</body>
+</html>

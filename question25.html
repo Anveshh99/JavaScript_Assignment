@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        th{
+            text-align: right;
+        }
+    </style>
+
+    <script>
+
+        function validateName()
+        {
+            var nm=document.getElementById("ip1").value;
+            if(nm.trim().length>5)
+            {
+                document.getElementById("ename").innerHTML="";
+                return true;
+            }
+            else
+            document.getElementById("ename").innerHTML="pls enter validate name";
+            return false;
+        }  
+        
+        function validateBillDate()
+        {
+            var dt=document.getElementById("ip3").value;
+            alert(dt);
+            var dt1=document.getElementById("ip4").value;
+            alert(dt1);
+
+            if(dt<dt1)
+            {
+                document.getElementById("shipdt").innerHTML="";
+                return true;
+            }else{
+                document.getElementById("shipdt").innerHTML="Date is invalid";
+                return false;
+            }
+           
+
+        }
+
+
+
+        function validatedata()
+        {
+            alert("validate")
+
+            flag=validateName();
+            flag1=validateBillDate();
+
+            if(flag && flag1)
+            return true;
+            else
+            return false;
+        }
+
+
+        function display()
+        {
+
+            // if(validatedata())
+            // {
+
+            var orid=document.getElementById("ip1").value;
+            var nqme=document.getElementById("ip2").value;
+            var bill=document.getElementById("ip3").value;
+            var ship=document.getElementById("ip4").value;
+            var total=document.getElementById("ip5").value;
+
+            document.getElementById("myform").innerHTML="Order id: "+orid+"<br>"+"Cust Name: "+
+                          nqme+"<br>"+"Billing Date: "+bill+"<br>"+"Shipping date: "+ship+"<br>"+"Order total: "+total+"<br>"    
+            // }
+        }
+    </script>
+
+<body>
+    <form onsubmit="return validatedata()">
+        <table>
+            <tr>
+                <th>Order ID:</th>
+                <td><input type="number" name="in1" id="ip1"></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Cust Name:</th>
+                <td><input type="text" name="nm" id="ip2"></td>
+                <td id="ename"></td>
+            </tr>
+
+            <tr>
+                <th>Enter Billing date:</th>
+                <td><input type="date" name="dt" id="ip3"></td>
+                <td id="shipdt"></td>
+            </tr>
+
+            <tr>
+                <th>Enter Shipping date:</th>
+                <td><input type="date" name="dt1" id="ip4"></td>
+                
+            </tr>
+
+            <tr>
+                <th>Total Order:</th>
+                <td><input type="number" name="order" id="ip5"></td>
+            </tr>
+        </table>
+
+        <button type="submit" name="btn" id="bt1" value="Submit" style="margin-left:90px ;" onclick="display()">Display</button><br>
+    </form>
+
+    <h5>Details:</h5>
+    <div id="myform">
+
+    </div>
+ </body>
+</html>

@@ -1,0 +1,39 @@
+
+<!--accept integer and   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function showString()
+        {
+         acceptno=parseInt(prompt("Enter Number"));
+         str=prompt("Enter String");
+         var message=" "
+        for(var i=0; i<acceptno; i++)
+        {
+            message += str+"<br>"; 
+        }
+
+        // document.write(acceptstr);
+        document.getElementById("myform").innerHTML=message;
+
+        }
+       
+    </script>
+</head>
+<body>
+    <script>
+        
+    </script>
+    <button type="button" name="btn" onclick="showString(event)">Show String</button>
+    <div id="myform">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- //x to power y answer -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showPower()
+        {
+            num1=parseInt(document.getElementById("num").value);
+            pow=parseInt(document.getElementById("pow").value);
+            alert(num1);
+            alert(pow);
+            var sum=1;
+            for(var i=0; i<pow; i++)
+            {
+               sum=sum*num1;   
+            }
+
+            document.getElementById("myForm").innerHTML=num1+"^"+pow+"="+sum;
+        }
+    </script>
+</head>
+<body>
+      Enter Number: <input type="number" name="num" id="num"> <br>
+      Enter Power: <input type="number" namw="pow" id="pow">  <br>
+      <button type="button" name="btn" id="btn" onclick="showPower()">Power</button>
+      <div id="myForm">
+        Answer: 
+      </div>
+      
+</body>
+</html>

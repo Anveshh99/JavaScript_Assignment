@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function date()
+    {
+
+        var d=new Date();
+    
+        var dy=d.getDay();
+        // alert(dy);
+        var mn=d.getMonth();
+        //alert(mn);
+        var yr=d.getFullYear();
+        //alert(yr);
+        var dt=d.getDate();
+        //alert(dt);
+        var weekarr=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var montharr=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+
+        var d1=new Date("2022-12-31");
+
+
+        var diffTime = Math.abs(d1-d);
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        alert(diffDays);
+
+        var win=window.open("cv");
+        win.document.write("Today is "+weekarr[dy]+", "+dt+" "+montharr[mn]+" "+yr+","+" and Good Afternoon to You. <br>"+"Number of days left till end of year: "+diffDays+" days");
+
+
+        //  document.getElementById("dt1").innerHTML="Today is "+weekarr[dy]+", "+dt+"/"+montharr[mn]+"/"+yr+","+"and Good Afternoon to You.";
+    }
+
+    </script>
+</head>
+<body>
+    <!-- <form> -->
+    <div id="dt1">
+        <button type="button" id="bt1" onclick="date()">Date</button>
+    </div>
+    <!-- </form> -->
+</body>
+</html>

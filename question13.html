@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .myclass{
+            display: none;
+        }
+
+        .myc{
+            display: block;
+        }
+    </style>
+
+    <script>
+
+        var emparr=[{eid:101,ename:"Eleven",sal:85000}];
+        function displaydata()
+        {
+
+            var str ="<table border='2'><tr><th>Employee Id</th><th>Employee Name</th><th>Salary</th></tr>";
+            alert(str);
+            for(var ob of emparr)
+            {
+                str += `<tr><td>${ob.eid}</td><td>${ob.ename}</td><td>${ob.sal}</td></tr>`;
+                alert(str);
+            }
+            str += "</table>";
+            document.getElementById("mydiv").innerHTML=str;
+        }
+
+        function displayForm()
+        {
+            document.getElementById("mydiv1").classList.remove("myclass");
+            document.getElementById("mydiv1").classList.add("myc");
+        }
+
+        function addEmployee()
+        {
+            eid=document.getElementById("empid").value;
+            alert(eid);
+            ename=document.getElementById("nm").value;
+            alert(ename);
+            sal=document.getElementById("sal").value;
+            alert(sal);
+
+            ob={eid,ename,sal};
+
+            emparr.push(ob);
+
+            document.getElementById("myfrm").reset();
+
+            document.getElementById("mydiv1").classList.remove("myc");
+            document.getElementById("mydiv1").classList.add("myclass");
+
+            displaydata();
+        }
+
+    </script>
+</head>
+<body onload="displaydata()">
+    <button type="button" name="btn" id="btn" onclick="displayForm()">Add Employee</button>
+    <div id="mydiv1" class="myclass">
+        <form id="myfrm">
+            EmployeeID: <input type="number" name="empid" id="empid"><br>
+            Employee Name: <input type="text" name="nm" id="nm"><br>
+            Salary: <input type="number" name="sal" id="sal"><br>
+            <button type="button" name="btn" id="btn1" onclick="addEmployee()">Add Data</button>
+        </form>
+    </div>
+
+    <div id="mydiv">
+
+    </div>
+</body> 
+</html>

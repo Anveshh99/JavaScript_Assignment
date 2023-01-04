@@ -1,0 +1,38 @@
+
+<!-- Write a program to find sum of digits of given
+five-digit Number -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function SumOfDigits()
+        {        
+         Number=parseInt(document.getElementById("nm").value);
+         var sum=0;
+         while(Number!=0)
+         {
+            
+            let rem=parseInt(Number%10);
+            sum=parseInt(sum)+parseInt(rem);
+            Number=parseInt(Number/10);
+         }
+
+         document.getElementById("myform").innerHTML=sum;
+        }
+    </script>
+
+</head>
+<body>
+     Enter Number: <br> <input type="number" name="nm" id="nm">
+     <button type="button" name="sum" id="sum" onclick="SumOfDigits()">Sum Of Digits</button>
+        <div id="myform">
+            Answer: 
+        </div>
+    </body>
+</html>
